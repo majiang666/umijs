@@ -7,17 +7,16 @@ export default {
     '@routes':path.resolve(path.resolve(__dirname, 'src/routes'))
   },
   plugins: [
-    // ref: https://umijs.org/plugin/umi-plugin-react.html
-    ['umi-plugin-react', {
-      antd: false,
-      dva: {
-        immer: true
-      },
+    [
+      'umi-plugin-react', 
+      {
+        dva: false,
+        antd: true,
       dynamicImport: false,
       title: 'umijs',
       dll: false,
-      exportStatic:true,
-      routes: {
+      exportStatic:false,
+      routes:{
         exclude: [
           /components\//,
         ],
@@ -34,6 +33,7 @@ export default {
           Routes:['src/routes/qx.js']
         }
       ]
-    }],
+      }
+    ]
   ]
 }
