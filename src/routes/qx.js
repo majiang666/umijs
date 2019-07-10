@@ -1,8 +1,8 @@
 export default (props) => {
-    return(
-        <div>
-            权限控制，我是否显示
-            { props.children }
-        </div>
-    )
-}
+    return (
+      <div>
+        <div>PrivateRoute (routes/PrivateRoute.js)</div>
+        { props.children }
+      </div>
+    );
+  }

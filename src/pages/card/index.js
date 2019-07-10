@@ -1,7 +1,7 @@
 import router from 'umi/router';
 const CardIndex = (props,context) => {
     console.log(props);
-    console.log(context);
+    // console.log(context);
     return(
         <div>
             card index

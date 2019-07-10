@@ -1,6 +1,6 @@
 export default function() {
   return (
-    <div style={{padding:'20px'}}>
+    <div>
       user-index
     </div>
   );

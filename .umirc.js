@@ -10,7 +10,9 @@ export default {
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       antd: false,
-      dva: false,
+      dva: {
+        immer: true
+      },
       dynamicImport: false,
       title: 'umijs',
       dll: false,
@@ -20,19 +22,18 @@ export default {
           /components\//,
         ],
       },
-      
+      routes:[
+        {
+          path:'/',
+          component:'./index.js',
+          Routes:['src/routes/PrivateRoute.js']
+        },
+        {
+          path:'/card',
+          component:'./card',
+          Routes:['src/routes/qx.js']
+        }
+      ]
     }],
-  ],
-  routes:[
-    {
-      path:'/',
-      component:'./index.js',
-      Routes:['src/routes/PrivateRoute.js','src/routes/qx.js']
-    },
-    {
-      path:'/card',
-      component:'./card',
-      Routes:['src/routes/qx.js']
-    }
   ]
 }
