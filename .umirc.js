@@ -10,30 +10,43 @@ export default {
     [
       'umi-plugin-react', 
       {
-        dva: false,
+        dva: true,
         antd: true,
-      dynamicImport: false,
-      title: 'umijs',
-      dll: false,
-      exportStatic:false,
-      routes:{
-        exclude: [
-          /components\//,
-        ],
-      },
-      routes:[
-        {
-          path:'/',
-          component:'./index.js',
-          Routes:['src/routes/PrivateRoute.js']
-        },
-        {
-          path:'/card',
-          component:'./card',
-          Routes:['src/routes/qx.js']
+        dynamicImport: false,
+        title: 'umijs',
+        dll: false,
+        exportStatic:false,
+        routes:{
+          exclude: [
+            /components\//,
+          ],
         }
-      ]
       }
     ]
+  ],
+  routes:[
+    {
+      path:'/',
+      component:'./index',
+      Routes: ['./src/routes/PrivateRoute.js'],
+    },
+    {
+      path:'/card',
+      component:'./card/_layout', 
+      routes:[
+        {
+          path:"/card/",
+          component:'./card'
+        },
+        {
+          path:"/card/info",
+          component:'./card/info'
+        }
+      ]
+    },
+    {
+      path:'/login',
+      component:'./login'
+    }
   ]
 }

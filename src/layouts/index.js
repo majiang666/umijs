@@ -1,7 +1,7 @@
 import styles from './index.css';
 import Login from './login';
 function BasicLayout(props) {
-  console.log(props.location);
+  // console.log(props.location);
   if(props.location.pathname === '/login'){
     return (
       <Login />
