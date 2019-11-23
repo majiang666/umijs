@@ -3,20 +3,22 @@ const path = require('path');
 export default {
   history: 'hash',
   treeShaking: true,
-  alias:{
-    '@routes':path.resolve(path.resolve(__dirname, 'src/routes'))
+  alias: {
+    '@routes': path.resolve(path.resolve(__dirname, 'src/routes'))
   },
   plugins: [
     [
-      'umi-plugin-react', 
+      'umi-plugin-react',
       {
-        dva: true,
+        dva: {
+          immer:true,
+        },
         antd: true,
         dynamicImport: false,
         title: 'umijs',
         dll: false,
-        exportStatic:false,
-        routes:{
+        exportStatic: false,
+        routes: {
           exclude: [
             /components\//,
           ],
@@ -24,29 +26,34 @@ export default {
       }
     ]
   ],
-  routes:[
+  routes: [
     {
-      path:'/',
-      component:'./index',
+      path: '/',
+      component: './index',
       Routes: ['./src/routes/PrivateRoute.js'],
     },
     {
-      path:'/card',
-      component:'./card/_layout', 
-      routes:[
+      path: '/card',
+      component: './card/_layout',
+      routes: [
         {
-          path:"/card/",
-          component:'./card'
+          path: "/card/",
+          component: './card'
         },
         {
-          path:"/card/info",
-          component:'./card/info'
+          path: "/card/info",
+          component: './card/info'
         }
       ]
     },
     {
-      path:'/login',
-      component:'./login'
+      path: "/immer",
+      component: './immer'
+    },
+    {
+      path: '/login',
+      component: './login'
     }
-  ]
+  ],
+  disableCSSModules:true
 }

@@ -1,5 +1,5 @@
 
-import styles from './index.css';
+import styles from './index.less';
 import Link from 'umi/link';
 export default function() {
   return (
